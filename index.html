@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1 user-scalable=0"/>
+    <title>移动端图片轮播</title>
+    <style>
+        ul, li {
+            margin: 0;
+            padding: 0;
+        }
+
+        @media screen and (min-width: 240px) {
+            html, body {
+                font-size: 9px;
+            }
+        }
+
+        @media screen and (min-width: 320px) {
+            html, body {
+                font-size: 12px;
+            }
+        }
+
+        @media screen and (min-width: 480px) {
+            html, body {
+                font-size: 18px;
+            }
+        }
+
+        @media screen and (min-width: 640px) {
+            html, body {
+                font-size: 24px;
+            }
+        }
+
+        @media screen and (min-width: 960px) {
+            html, body {
+                font-size: 36px;
+            }
+        }
+
+        div.imgbox {
+            width: 25rem;
+            height: 16.5rem;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+
+        div.imgbox ul {
+            clear: both;
+            width: 75rem;
+        }
+
+        div.imgbox ul li {
+            float: left;
+            width: 25rem;
+            height: 16.5rem;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        div.imgbox ul li img {
+            width: 24rem;
+            height: 16.5rem;
+        }
+
+        #page {
+            overflow: hidden;
+        }
+        .item-btn{
+            width: 10px;
+            height: 10px;
+            background: #ddd;
+            border-radius: 50%;
+            float: left;
+            margin: 0 5px;
+        }
+        .item-btn.active{
+            background: #d43f3a;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="imgbox">
+    <ul>
+        <li one=""><a href="http://home.cnblogs.com/u/huzhiming/"><img
+                src="http://y2.ifengimg.com/df84c07b46e03f8e/2014/0512/rdn_53708f3d8533e.jpg"></img></a></li>
+        <li><a href="http://home.cnblogs.com/u/huzhiming/"><img
+                src="http://y2.ifengimg.com/df84c07b46e03f8e/2014/0512/rdn_53708f23aad06.jpg"></img></a></li>
+        <li three=""><a href="http://home.cnblogs.com/u/huzhiming/"><img
+                src="http://y2.ifengimg.com/df84c07b46e03f8e/2014/0512/rdn_53708f345282b.jpg"></img></a></li>
+    </ul>
+</div>
+<div id="page"></div>
+
+<script src="http://zeptojs.com/zepto.min.js"></script>
+<script src="js/index.js"></script>
+<script>
+    var imgScroll = new ImgScroll('.imgbox ul',{
+        btn_box : '#page',
+        index : 2,
+        callback : function (obj){
+            console.log(obj)
+        }
+    });
+</script>
+
+</body>
+</html>
